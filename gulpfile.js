@@ -43,6 +43,10 @@ gulp.task("html", function () {
   return gulp.src("src/*.html").pipe(gulp.dest("dist"));
 });
 
+gulp.task("js", function () {
+  return gulp.src("src/js/*.js").pipe(gulp.dest("dist/js"));
+});
+
 gulp.task("css", function () {
   return gulp.src("src/css/*.min.css").pipe(gulp.dest("dist/css"));
 });
@@ -55,5 +59,5 @@ gulp.task("assets", function () {
 
 gulp.task(
   "build",
-  gulp.series("clean", "styles", gulp.parallel("html", "css", "assets"))
+  gulp.series("clean", "styles", gulp.parallel("html", "js", "css", "assets"))
 );
