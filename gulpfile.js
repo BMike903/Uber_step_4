@@ -49,7 +49,7 @@ gulp.task("css", function () {
 
 gulp.task("assets", function () {
   return gulp
-    .src(["src/icons/**/*", "src/img/**/*"], { base: "src" })
+    .src(["src/icons/**/*", "src/img/**/*"], { base: "src", encoding: false })
     .pipe(gulp.dest("dist"));
 });
 
